@@ -8,11 +8,13 @@ from googleapiclient.discovery import build
 # Cargar las variables de entorno desde .env
 load_dotenv()
 
+
 SCOPES = ['++++']
 SPREADSHEET_ID = '***'
 #PARA DEPLOYAR USAR:
 #credentials_json = os.getenv("GOOGLE_CREDENTIALS_JSON")
 KEY = ''
+
 #if credentials_json is None:
 #    raise ValueError("La variable de entorno GOOGLE_CREDENTIALS_JSON no está definida.")
 
@@ -82,3 +84,4 @@ def obtener():
 
 if _name_ == "_main_":
     result = proceso()
+
