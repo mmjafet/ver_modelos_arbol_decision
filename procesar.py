@@ -8,11 +8,11 @@ from googleapiclient.discovery import build
 # Cargar las variables de entorno desde .env
 load_dotenv()
 
-SCOPES = ['https://www.googleapis.com/auth/spreadsheets']
-SPREADSHEET_ID = '1Obu4WjWNC_XWu4IYiFmxdwFuJzyYJ7VY1gR1uAwMlfc'
+SCOPES = ['++++']
+SPREADSHEET_ID = '***'
 #PARA DEPLOYAR USAR:
 #credentials_json = os.getenv("GOOGLE_CREDENTIALS_JSON")
-KEY = 'key.json'
+KEY = ''
 #if credentials_json is None:
 #    raise ValueError("La variable de entorno GOOGLE_CREDENTIALS_JSON no está definida.")
 
