@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resultados</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #f0f4f8; /* Fondo azul muy claro */
+            font-family: 'Arial', sans-serif;
+        }
+        .navbar {
+            margin-bottom: 30px;
+            background-color: #343a40;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        .navbar-brand {
+            font-weight: bold;
+            color: #ffffff !important;
+        }
+        .nav-link {
+            color: #cfd8dc !important;
+        }
+        .card {
+            max-width: 550px;
+            margin: auto;
+            border: none;
+            border-radius: 20px;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+            background-color: #ffffff;
+        }
+        .card img {
+            border-top-left-radius: 20px;
+            border-top-right-radius: 20px;
+        }
+        .card-body {
+            background-color: #fafafa;
+            padding: 30px;
+        }
+        .card-title {
+            color: #007bff;
+            font-weight: bold;
+        }
+        h1 {
+            color: #007bff;
+            font-size: 28px;
+            margin-bottom: 20px;
+        }
+        .btn-custom {
+            background-color: #007bff;
+            color: #ffffff;
+            border: none;
+            border-radius: 30px;
+            padding: 10px 20px;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+        }
+        .btn-custom:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand" href="{{ url_for('index') }}">Resultados</a>
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ url_for('index') }}">Volver</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Content -->
+    <div class="container">
+        <h1 class="text-center mb-4">Resultados del mapeo</h1>
+        
+        <div class="row">
+            <div class="col-md-6 col-lg-3">
+                <div class="card mb-4">
+                    <img src="data:image/png;base64,{{ images_data['original'] }}" alt="Imagen Original" class="img-fluid">
+                    <div class="card-body text-center">
+                        <h5 class="card-title">Original</h5>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-3">
+                <div class="card mb-4">
+                    <img src="data:image/png;base64,{{ images_data['brillo'] }}" alt="Aumento de Brillo" class="img-fluid">
+                    <div class="card-body text-center">
+                        <h5 class="card-title">Aumento de Brillo</h5>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-3">
+                <div class="card mb-4">
+                    <img src="data:image/png;base64,{{ images_data['horizontal'] }}" alt="Volteo Horizontal" class="img-fluid">
+                    <div class="card-body text-center">
+                        <h5 class="card-title">Volteo Horizontal</h5>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-3">
+                <div class="card mb-4">
+                    <img src="data:image/png;base64,{{ images_data['vertical'] }}" alt="Volteo Vertical" class="img-fluid">
+                    <div class="card-body text-center">
+                        <h5 class="card-title">Volteo Vertical</h5>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

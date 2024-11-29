@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Puntos Faciales</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #121212;
+            color: #e0e0e0;
+            font-family: 'Arial', sans-serif;
+        }
+        .container {
+            max-width: 600px;
+            margin-top: 50px;
+        }
+        .custom-file {
+            border: 2px dashed #424242;
+            padding: 30px;
+            text-align: center;
+            border-radius: 10px;
+            background-color: #1e1e1e;
+            transition: border-color 0.3s, background-color 0.3s;
+        }
+        .custom-file:hover {
+            border-color: #616161;
+            background-color: #2a2a2a;
+        }
+        .submit-btn {
+            background-color: #424242;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 30px;
+            font-size: 16px;
+            font-weight: bold;
+            color: #ffffff;
+            transition: background-color 0.3s;
+        }
+        .submit-btn:hover {
+            background-color: #616161;
+        }
+        .card {
+            border: none;
+            border-radius: 15px;
+            background-color: #1e1e1e;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+        }
+        .navbar {
+            background-color: #212121;
+            border-bottom: 1px solid #424242;
+        }
+        .navbar-brand {
+            font-weight: bold;
+            color: #e0e0e0 !important;
+        }
+        h2 {
+            color: #e0e0e0;
+        }
+        .text-muted {
+            color: #b0b0b0 !important;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg">
+        <div class="container">
+            <a class="navbar-brand" href="{{ url_for('index') }}">Subir Imagen</a>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="card p-5 shadow-sm">
+            <h2 class="text-center mb-4">Selecciona una imagen</h2>
+            <form action="{{ url_for('procesar') }}" method="POST" enctype="multipart/form-data">
+                <div class="form-group custom-file">
+                    <input type="file" name="file" class="form-control-file" accept="image/*" required>
+                    <p class="mt-2 text-muted">cargar la imagen</p>
+                </div>
+                <button type="submit" class="btn btn-primary btn-block submit-btn mt-4">Subir</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
